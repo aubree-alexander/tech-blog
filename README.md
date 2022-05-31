@@ -1,7 +1,7 @@
 # tech-blog
 
 ## Built with 
-* j=Javascript
+* Javascript
 * express-handlebars
 * MySQL2
 * Sequelize
