@@ -1,12 +1,11 @@
 //what the page renders when you're logged in.
 
 const router = require('express').Router();
-//AA - what is this one doing below?
 const { Post } = require('../models/');
 const withAuth = require('../utils/auth');
 
+//check if user is logged in
 router.get('/', withAuth, async (req, res) => {
-    //AA - I haven't heard of try before
     try {
         const postData = await Post.findAll({
             where: {
@@ -14,8 +13,11 @@ router.get('/', withAuth, async (req, res) => {
             },
         });
 
+        //map data and store in posts variable
         const posts = postData.map((post) => post.get({ plain: true }));
 
+        //grab post variable and say that's what we're going to hand off to handlebars as.
+        //want to use dashboard layout (logged in layout) and want postsData to render all-posts-admin partial.
         res.render('all-posts-admin', {
             layout: 'dashboard',
             posts,
@@ -27,7 +29,6 @@ router.get('/', withAuth, async (req, res) => {
 
 router.get('/new', withAuth, (req, res) => {
     res.render('new-post', {
-        //AA - I know it's using the dashboard handlebars layout, but how come we don't have to do this: '/views/layouts/dashboard'?
         layout: 'dashboard',
     });
 });
