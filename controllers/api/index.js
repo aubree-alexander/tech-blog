@@ -1,9 +1,13 @@
 const router = require('express').Router();
-const commentRoutes = require('./comment-routes')
+//endpoints unlock the routes.
+const commentRoutes = require('./comment-routes.js')
+const userRoutes = require('./user-routes.js');
+const postRoutes = require('./post-routes.js');
 
-//endpoint comment unlocks comment routes.
+
 router.use('/comment', commentRoutes)
+router.use('/post', postRoutes)
+router.use('/user', userRoutes)
 
-//use this file for comment, post and user routes
 
 module.exports = router;
