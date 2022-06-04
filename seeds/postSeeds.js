@@ -1,6 +1,6 @@
 const { Post } = require('../models');
 
-const postdata = [
+const postData = [
   {
     title: 'Donec posuere metus vitae ipsum.',
     post_url: 'https://buzzfeed.com/in/imperdiet/et/commodo/vulputate.png',
@@ -33,6 +33,6 @@ const postdata = [
   }
 ];
 
-const seedPosts = () => Post.bulkCreate(postdata);
+const seedPosts = () => Post.bulkCreate(postData);
 
 module.exports = seedPosts;

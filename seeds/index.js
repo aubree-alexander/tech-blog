@@ -5,18 +5,17 @@ const userSeeds = require('./userSeeds');
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
-    await sequelize.sync({ force: true });
-    console.log('--------------');
-    await userSeeds();
-    console.log('--------------');
+    try {
+        await sequelize.sync({ force: true });
+        await userSeeds();
+        await postSeeds();
+        await commentSeeds();
 
-    await postSeeds();
-    console.log('--------------');
-
-    await commentSeeds();
-    console.log('--------------');
-
-    process.exit(0);
+        process.exit(0);
+    } catch (err) {
+        console.log(err);
+        process.exit();
+    }
 };
 
 seedAll();

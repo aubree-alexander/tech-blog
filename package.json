@@ -10,7 +10,8 @@
     "sequelize": "^6.20.1"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "seeds": "node seeds"
   },
   "name": "tech-blog",
   "description": "## Built with  * Javascript * express-handlebars * MySQL2 * Sequelize * dotenv * bcrypt * express-session",
