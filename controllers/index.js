@@ -1,15 +1,16 @@
 //point of this file is a traffic controller! 
 
 const router = require('express').Router();
+
 const apiRoutes = require('./api/');
+const homeRoutes = require('./home-routes.js');
+const dashboardRoutes = require('./dashboard-routes.js');
 
-router.use('/api', apiRoutes)
+router.use('/api', apiRoutes);
+router.use('/', homeRoutes);
+router.use('/dashboard', dashboardRoutes);
 
-// router.get('/', (req, res) => {
-//     res.render('home');
-// })
 
 module.exports = router;
 
-//use this file for api routes, dashboard routes, and home routes.
 
