@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
         });
 
         req.session.save(() => {
-            req.session.userId = newUser.isSoftDeleted;
+            req.session.userId = newUser.id;
             req.session.username = newUser.username;
             req.session.loggedIn = true;
 
