@@ -2,8 +2,8 @@ const signupFormHandler = async function(event) {
   event.preventDefault();
 
   //grab username and password that user inputs into form
-  const username = document.querySelector('#username-input-signup');
-  const password = document.querySelector('#password-input-signup');
+  const username = document.querySelector('#signup-username');
+  const password = document.querySelector('#signup-password');
 
   const response = await fetch('/api/user', {
     method: 'POST',
@@ -21,4 +21,14 @@ const signupFormHandler = async function(event) {
   }
 };
 
+const existingAccount = function(event) {
+  event.preventDefault();
+
+  document.location.replace('/login');
+};
+
 document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
+
+//AA - this isn't working. not redirecting to login handlebars partial when clicked.
+document.querySelector('#have-account-login').addEventListener('submit', existingAccount);
+
