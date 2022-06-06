@@ -12,11 +12,11 @@
 <body class="flex-column">
   <nav class="navbar">
     <ul>
-      <li class="li-inline nav-item"><a href="/">Home</a></li>
-      <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
-      <li class="li-inline nav-item"><a href="/login" id="nav-login">Login</a></li>
+      <li class="navbar-text nav-item"><a href="/">Home</a></li>
+      <li class="navbar-text nav-item"><a href="/dashboard">Dashboard</a></li>
+      <li class="navbar-text nav-item"><a href="/login" id="nav-login">Login</a></li>
       {{#if loggedIn}}
-      <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
+      <li class="navbar-text nav-item"><a href="#" id="logout-link">Logout</a></li>
       {{/if}}
     </ul>
   </nav>
@@ -28,7 +28,7 @@
     {{{body}}}
   </main>
 
-  <footer class="flex-row justify-center">
+  <footer class="post-div footer-section">
   </footer>
 </body>
 
