@@ -12,9 +12,9 @@
 
 ## Description/Purpose
 * Challenge for UW Extensions Coding Bootcamp. 
-* Functionality: 
+* Functionality: User can create an account / login, and view, edit, and comment on posts. It is a tech blog.
 
-## Walkthrough/Demonstration Video
+## Photo
 
 ## User Story
 * GIVEN a CMS-style blog site
