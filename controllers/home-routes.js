@@ -1,9 +1,9 @@
 //for landing page when not logged in.
-//this renders through main.handlebars layout.
+//this renders through main.handlebars partial.
 
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment, Vote } = require('../models/');
+const { Post, User, Comment } = require('../models/');
 
 //get all posts for non-logged in homepage
 router.get('/', async (req, res) => {
@@ -12,11 +12,11 @@ router.get('/', async (req, res) => {
             include: [User],
         });
 
-        //map data and store in posts variable
+        //map data and store in variable called posts
         const posts = postData.map((post) => post.get({ plain: true }));
 
-        //grab post variable and say that's what we're going to hand off to handlebars as.
-        //want to use dashboard layout (logged in layout) and want postsData to render all-posts-admin partial.
+        //grab post variable and hand off to handlebars
+        //use dashboard layout (logged in layout. postsData should render all-posts partial
         res.render('all-posts', { posts });
     } catch (err) {
         res.status(500).json(err);
