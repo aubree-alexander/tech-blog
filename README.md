@@ -16,6 +16,9 @@
 
 ## Photo
 
+## Deployed on Heroku:
+https://mighty-hollows-58259.herokuapp.com/
+
 ## User Story
 * GIVEN a CMS-style blog site
 * WHEN I visit the site for the first time
